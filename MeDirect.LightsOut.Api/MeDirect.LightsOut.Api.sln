@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeDirect.LightsOut.Api", "MeDirect.LightsOut.Api.csproj", "{1C33867B-93B4-43DE-A999-E462001472F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeDirect.LightsOut.Data", "..\MeDirect.LightsOut.Data\MeDirect.LightsOut.Data.csproj", "{7E3A2659-6B63-44B6-BAE7-3D9819A48B61}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeDirect.LightsOut.Service", "..\MeDirect.LightsOut.Services\MeDirect.LightsOut.Service.csproj", "{E49ADD70-24ED-420A-9E30-EC1F3A50B7EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeDirect.Common", "..\MeDirect.Common\MeDirect.Common.csproj", "{201A2EFC-2349-47FD-B62E-3496A0C141C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1FE0BE76-542D-4D2C-B56A-2E3407F96409}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeDirect.Common.Tests", "..\MeDirect.Common.Tests\MeDirect.Common.Tests.csproj", "{68D8A7B3-2667-4048-AA65-230C5530938E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeDirect.LightsOut.Service.Tests", "..\MeDirect.LightsOut.Service.Tests\MeDirect.LightsOut.Service.Tests.csproj", "{58DB50B5-590C-48FD-A5E5-827144AAF466}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C33867B-93B4-43DE-A999-E462001472F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C33867B-93B4-43DE-A999-E462001472F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C33867B-93B4-43DE-A999-E462001472F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C33867B-93B4-43DE-A999-E462001472F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E3A2659-6B63-44B6-BAE7-3D9819A48B61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E3A2659-6B63-44B6-BAE7-3D9819A48B61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E3A2659-6B63-44B6-BAE7-3D9819A48B61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E3A2659-6B63-44B6-BAE7-3D9819A48B61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E49ADD70-24ED-420A-9E30-EC1F3A50B7EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E49ADD70-24ED-420A-9E30-EC1F3A50B7EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E49ADD70-24ED-420A-9E30-EC1F3A50B7EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E49ADD70-24ED-420A-9E30-EC1F3A50B7EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{201A2EFC-2349-47FD-B62E-3496A0C141C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{201A2EFC-2349-47FD-B62E-3496A0C141C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{201A2EFC-2349-47FD-B62E-3496A0C141C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{201A2EFC-2349-47FD-B62E-3496A0C141C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68D8A7B3-2667-4048-AA65-230C5530938E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68D8A7B3-2667-4048-AA65-230C5530938E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68D8A7B3-2667-4048-AA65-230C5530938E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68D8A7B3-2667-4048-AA65-230C5530938E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58DB50B5-590C-48FD-A5E5-827144AAF466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58DB50B5-590C-48FD-A5E5-827144AAF466}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58DB50B5-590C-48FD-A5E5-827144AAF466}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58DB50B5-590C-48FD-A5E5-827144AAF466}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{68D8A7B3-2667-4048-AA65-230C5530938E} = {1FE0BE76-542D-4D2C-B56A-2E3407F96409}
+		{58DB50B5-590C-48FD-A5E5-827144AAF466} = {1FE0BE76-542D-4D2C-B56A-2E3407F96409}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {65B8877A-7282-4785-9B33-EBFC62A58D91}
+	EndGlobalSection
+EndGlobal

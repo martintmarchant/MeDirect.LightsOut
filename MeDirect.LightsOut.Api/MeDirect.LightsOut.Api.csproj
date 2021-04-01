@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>58d0b870-3acf-434a-be16-3f28d1778fc8</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Code\MeDirect\MeDirect.LightsOut.Api\MeDirect.LightsOut.Api.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="5.6.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MeDirect.Common\MeDirect.Common.csproj" />
+    <ProjectReference Include="..\MeDirect.LightsOut.Data\MeDirect.LightsOut.Data.csproj" />
+    <ProjectReference Include="..\MeDirect.LightsOut.Services\MeDirect.LightsOut.Service.csproj" />
+  </ItemGroup>
+
+</Project>

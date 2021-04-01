@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MeDirect.LightsOut.Api</name>
+    </assembly>
+    <members>
+        <member name="T:MeDirect.LightsOut.Api.Configuration.DependancySetup">
+            <summary>
+            Dependancy Injection COnfiguration
+            </summary>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Configuration.DependancySetup.ConfigureDependancies(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Configure DI
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MeDirect.LightsOut.Api.Configuration.Startup">
+            <summary>
+            Startup Configuration Class
+            </summary>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Configuration.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:MeDirect.LightsOut.Api.Configuration.Startup.Configuration">
+            <summary>
+            Configuration Property
+            </summary>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Configuration.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            method adds services to the container (called by the runtime).
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Configuration.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            method to configure the HTTP request pipeline (called by the runtime).
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="T:MeDirect.LightsOut.Api.Controllers.GameConfigurationController">
+            <summary>
+            Configuration Controller
+            </summary>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Controllers.GameConfigurationController.#ctor(MeDirect.LightsOut.Service.Configuration.IGameConfigurationService)">
+            <summary>
+            Default Constructor
+            </summary>
+            <param name="gameConfigurationService"></param>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Controllers.GameConfigurationController.GetConfiguration">
+            <summary>
+            Get the enforced configuration settings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MeDirect.LightsOut.Api.Controllers.GamePlayController">
+            <summary>
+            LightsOut Game Controller
+            </summary>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Controllers.GamePlayController.#ctor(MeDirect.LightsOut.Service.GamePlay.IBoardService,MeDirect.LightsOut.Service.GamePlay.IMoveService,MeDirect.LightsOut.Service.Configuration.IGameConfigurationService)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="boardService">Service responsible for creation of board</param>
+            <param name="moveService">Service responsible for cell changes</param>
+            <param name="gameConfigurationService"></param>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Controllers.GamePlayController.GetCommonBoardConfigurations">
+            <summary>
+            Gets a list of common board configurations
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Controllers.GamePlayController.CreateNewGameBoard(MeDirect.LightsOut.Data.Model.Game.GameRequest)">
+            <summary>
+            Create a new game board
+            </summary>
+            <remarks>Create a new game board</remarks>
+            <returns>All cells in the board</returns>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Controllers.GamePlayController.UpdateCellsChange(MeDirect.LightsOut.Data.Model.Game.GameMovement)">
+            <summary>
+            Board Cell Update. 
+            </summary>
+            <remarks>Toggles neighbours and returns list of cell affected</remarks>
+            <returns>Cells Affected</returns>
+        </member>
+        <member name="T:MeDirect.LightsOut.Api.Controllers.HighScoreTableController">
+            <summary>
+            Controller for managing scores
+            </summary>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Controllers.HighScoreTableController.#ctor(MeDirect.LightsOut.Service.GamePlay.IScoreService)">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Controllers.HighScoreTableController.GetListOfHiScores(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets a list of the top 20 previous Games matching the gameLayout
+            </summary>
+            <param name="columns"></param>
+            <param name="rows"></param>
+            <param name="startLightCount"></param>
+            <returns>List of Hiscores</returns>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Controllers.HighScoreTableController.InsertScore(MeDirect.LightsOut.Data.Model.Game.GameScore)">
+            <summary>
+            Inserts Game Detail into the games repository archive
+            </summary>
+            <param name="gameScore"></param>
+            <returns>Rows affected</returns>
+        </member>
+        <member name="T:MeDirect.LightsOut.Api.Middleware.ErrorHandlingMiddleware">
+            <summary>
+            Catch All Errors and return friendly response
+            </summary>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Middleware.ErrorHandlingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="next"></param>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Middleware.ErrorHandlingMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            ErrorHandling (Middleware pipeline)
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Middleware.ErrorHandlingMiddleware.ExceptionHandlerAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception)">
+            <summary>
+            Generate consistant (Friendly) Error response
+            </summary>
+            <param name="context"></param>
+            <param name="exception"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MeDirect.LightsOut.Api.Middleware.LoggingMiddleware">
+             <summary>
+             Middleware Logging
+             following interview discussion on middleware, wanted to include something here.. 
+             
+             this class is responsible for log setup/Enrichment 
+             and (optionally) recording request/response streams 
+             into the database (includes performance stats for performance monitoring)
+             
+             Logs.RequestResponse.RequestIds in the database links to logs.Log.RequestIds 
+             so you have full end to end tracability... 
+            
+             </summary>
+             <remarks>
+             there is still work to be done here.. 
+              
+             example of work outstanding: 
+             selection of controller/actions to log 
+             performance:  sql fire and forget logging
+             testing: from multiple simaltanious calls etc
+             </remarks>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Middleware.LoggingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Default Constructor
+            </summary>
+            <param name="next"></param>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Middleware.LoggingMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext,MeDirect.LightsOut.Data.Repository.ILoggingRepository,MeDirect.LightsOut.Data.Settings.IApiConfiguration)">
+            <summary>
+            Inserts Logging at the beginning and end of the pipeline
+            </summary>
+            <param name="context"></param>
+            <param name="loggingRepository"></param>
+            <param name="apiConfiguration"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Middleware.LoggingMiddleware.SetupLogging(MeDirect.LightsOut.Data.Settings.IApiConfiguration)">
+            <summary>
+            Setup Serilog to log to SQL Server
+            </summary>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Middleware.LoggingMiddleware.LogRequestAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Logs the raw request info into the repository
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Middleware.LoggingMiddleware.LogResponseAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Logs the raw response info into the repository
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Middleware.LoggingMiddleware.Log(Microsoft.AspNetCore.Http.HttpContext,System.String,MeDirect.LightsOut.Api.Middleware.LoggingMiddleware.Flow,System.Int64)">
+            <summary>
+            write to database request/response stream
+            </summary>
+            <param name="context"></param>
+            <param name="body"></param>
+            <param name="flowDirection"></param>
+            <param name="timeMs"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MeDirect.LightsOut.Api.Program">
+            <summary>
+            Main Entry Class
+            </summary>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Program.Main(System.String[])">
+            <summary>
+            Main Application Entry Method
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:MeDirect.LightsOut.Api.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Host Builder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
